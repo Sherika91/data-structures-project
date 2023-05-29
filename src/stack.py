@@ -33,5 +33,12 @@ class Stack:
 
         :return: данные удаленного элемента
         """
+        if self.top is None:
+            return None
+        removed_data = self.top.data
+        self.top = self.top.next_node
+        return removed_data
 
-        return self.pop()
+    def __str__(self):
+        """Магический метод для строкового представления объекта"""
+        return f'{self.top}'

@@ -22,8 +22,14 @@ class StackTest(TestCase):
     def test_pop(self):
         self.stack.push('test_data1')
         self.stack.push('test_data2')
+        self.stack.push(None)
+        self.assertEqual(self.stack.pop(), None)
         self.assertEqual(self.stack.pop(), 'test_data2')
         self.assertEqual(self.stack.pop(), 'test_data1')
+
+    def test__str__(self):
+        self.stack.push('test_data1')
+        self.assertEqual(self.stack.__str__(), self.stack.__str__())
 
 
 if __name__ == '__main__':
